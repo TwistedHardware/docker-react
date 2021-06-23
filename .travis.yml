@@ -1,11 +1,11 @@
 language: generic
 sudo: required
 services:
-- docker
+  - docker
 before_install:
-- docker build -f Dockerfile.dev -t twistedhardware/docker-react .
+  - docker build -f Dockerfile.dev -t twistedhardware/docker-react .
 script:
-- docker run -e CI=true twistedhardware/docker-react npm run test
+  - docker run -e CI=true twistedhardware/docker-react npm run test
 deploy:
   provider: heroku
   api_key: $HEROKU_API_KEY
