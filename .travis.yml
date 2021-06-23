@@ -8,7 +8,7 @@ script:
 - docker run -e CI=true twistedhardware/docker-react npm run test
 deploy:
   provider: heroku
-  api_key:
-    secure: $HEROKU_API_KEY
+  api_key: $HEROKU_API_KEY
+#    secure: $HEROKU_API_KEY_SECURE
   app: twistedhardware-docker-react
   on: master
